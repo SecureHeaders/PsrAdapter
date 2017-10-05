@@ -1,9 +1,9 @@
 <?php
 
-namespace Aidantwoods\SecureHeaders\Tests\Http;
+namespace SecureHeaders\HttpAdapters\Tests;
 
 use Aidantwoods\SecureHeaders\HeaderBag;
-use Aidantwoods\SecureHeaders\Http\Psr7Adapter;
+use SecureHeaders\HttpAdapters\Psr7Adapter;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\Response;
 

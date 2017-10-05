@@ -2,7 +2,7 @@
 
 namespace SecureHeaders\HttpAdapters;
 
-use Aidantwoods\SecureHeaders\HttpAdapter;
+use Aidantwoods\SecureHeaders\Http\HttpAdapter;
 use Aidantwoods\SecureHeaders\HeaderBag;
 use Psr\Http\Message\ResponseInterface;
 
