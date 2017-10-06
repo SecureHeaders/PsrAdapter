@@ -1,13 +1,13 @@
 <?php
 
-namespace SecureHeaders\HttpAdapters\Tests;
+namespace SecureHeaders\Psr7HttpAdapter\Tests;
 
 use Aidantwoods\SecureHeaders\HeaderBag;
-use SecureHeaders\HttpAdapters\Psr7Adapter;
+use SecureHeaders\Psr7HttpAdapter\Adapter;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\Response;
 
-class Psr7AdapterTest extends PHPUnit_Framework_TestCase
+class AdapterTest extends PHPUnit_Framework_TestCase
 {
     public function testProperlyFillsHeaderBag()
     {
@@ -16,7 +16,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
             ->withAddedHeader('X-Foo-Bar', 'val1')
             ->withAddedHeader('X-Foo-Bar', 'val2');
 
-        $adapter = new Psr7Adapter($response);
+        $adapter = new Adapter($response);
         $headers = $adapter->getHeaders();
 
         $this->assertTrue($headers->has('content-type'));
@@ -32,7 +32,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
             ->withAddedHeader('X-Foo-Bar', 'val1')
             ->withAddedHeader('X-Foo-Bar', 'val2');
 
-        $adapter = new Psr7Adapter($response);
+        $adapter = new Adapter($response);
         $adapter->sendHeaders(new HeaderBag());
 
         $finalResponse = $adapter->getFinalResponse();
@@ -47,7 +47,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
             ->withAddedHeader('X-Foo-Bar', 'val1')
             ->withAddedHeader('X-Foo-Bar', 'val2');
 
-        $adapter = new Psr7Adapter($response);
+        $adapter = new Adapter($response);
         $adapter->sendHeaders(HeaderBag::fromHeaderLines([
             'Content-Type: text/xml',
             'Content-Length: 123',

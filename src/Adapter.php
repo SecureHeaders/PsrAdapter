@@ -1,12 +1,12 @@
 <?php
 
-namespace SecureHeaders\HttpAdapters;
+namespace SecureHeaders\Psr7HttpAdapter;
 
 use Aidantwoods\SecureHeaders\Http\HttpAdapter;
 use Aidantwoods\SecureHeaders\HeaderBag;
 use Psr\Http\Message\ResponseInterface;
 
-class Psr7Adapter implements HttpAdapter
+class Adapter implements HttpAdapter
 {
     /**
      * @var ResponseInterface

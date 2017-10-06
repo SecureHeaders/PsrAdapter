@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SecureHeaders\\HttpAdapters\\": "src/"
+            "SecureHeaders\\Psr7HttpAdapter\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SecureHeaders\\HttpAdapters\\Tests\\": "tests/"
+            "SecureHeaders\\Psr7HttpAdapter\\Tests\\": "tests/"
         }
     },
     "license": "MIT"
