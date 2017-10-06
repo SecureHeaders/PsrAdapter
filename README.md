@@ -1,0 +1,3 @@
+# SecureHeaders Psr7 HttpAdapter [![Build Status](https://travis-ci.org/SecureHeaders/Psr7Adapter.svg?branch=master)](https://travis-ci.org/SecureHeaders/Psr7Adapter) [![Build Status](https://ci.appveyor.com/api/projects/status/github/secureheaders/psr7adapter?branch=master&svg=true&retina=true)](https://ci.appveyor.com/project/aidantwoods/psr7adapter)
+A Psr7 HttpAdapter implementation for [SecureHeaders](https://github.com/aidantwoods/SecureHeaders). For more information on HttpAdapters see [Framework Integration](https://github.com/aidantwoods/SecureHeaders/wiki/Framework-Integration) in the SecureHeaders Wiki.
+
