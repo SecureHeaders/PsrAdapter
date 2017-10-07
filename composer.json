@@ -1,5 +1,5 @@
 {
-    "name": "secureheaders/psr7adapter",
+    "name": "secureheaders/psradapter",
     "description": "SecureHeaders Psr7 Http Adapter",
     "keywords": [
         "secureheaders",
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SecureHeaders\\Psr7HttpAdapter\\": "src/"
+            "SecureHeaders\\PsrHttpAdapter\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SecureHeaders\\Psr7HttpAdapter\\Tests\\": "tests/"
+            "SecureHeaders\\PsrHttpAdapter\\Tests\\": "tests/"
         }
     },
     "license": "MIT"
