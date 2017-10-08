@@ -1,4 +1,4 @@
-# SecureHeaders PSR-7 Adapter [![Build Status](https://travis-ci.org/SecureHeaders/Psr7Adapter.svg?branch=master)](https://travis-ci.org/SecureHeaders/Psr7Adapter) [![Build Status](https://ci.appveyor.com/api/projects/status/github/secureheaders/psr7adapter?branch=master&svg=true&retina=true)](https://ci.appveyor.com/project/aidantwoods/psr7adapter)
+# SecureHeaders PSR-7 Adapter [![Build Status](https://travis-ci.org/SecureHeaders/PsrAdapter.svg?branch=master)](https://travis-ci.org/SecureHeaders/PsrAdapter) [![Build Status](https://ci.appveyor.com/api/projects/status/github/secureheaders/psradapter?branch=master&svg=true&retina=true)](https://ci.appveyor.com/project/aidantwoods/psradapter)
 
 A PSR-7 adapter for [SecureHeaders](https://github.com/aidantwoods/SecureHeaders).
 For more information on adapters, see [Framework Integration](https://github.com/aidantwoods/SecureHeaders/wiki/Framework-Integration) in the SecureHeaders Wiki.
