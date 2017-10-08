@@ -16,12 +16,12 @@ class SecureHeadersHandlerTest extends PHPUnit_Framework_TestCase
         $response = new Response();
 
         $headers = $this
-            ->getMockBuilder(SecureHeaders::class)
+            ->getMockBuilder('Aidantwoods\SecureHeaders\SecureHeaders')
             ->getMock();
 
         $headers->expects($this->once())
             ->method('apply')
-            ->with($this->isInstanceOf(PsrHttpAdapter\Psr7Adapter::class));
+            ->with($this->isInstanceOf('SecureHeaders\PsrHttpAdapter\Psr7Adapter'));
 
         $handler  = new PsrHttpAdapter\SecureHeadersHandler($headers);
 
@@ -34,7 +34,7 @@ class SecureHeadersHandlerTest extends PHPUnit_Framework_TestCase
 
         $output = $handler($request, $response, $next);
 
-        $this->assertInstanceOf(Response::class, $output);
+        $this->assertInstanceOf('Zend\Diactoros\Response', $output);
         $this->assertSame($response, $output);
     }
 
