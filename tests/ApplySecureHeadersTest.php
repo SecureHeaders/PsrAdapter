@@ -8,7 +8,7 @@ use SecureHeaders\PsrHttpAdapter;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;
 
-class SecureHeadersHandlerTest extends PHPUnit_Framework_TestCase
+class ApplySecureHeadersTest extends PHPUnit_Framework_TestCase
 {
     public function testHandler()
     {
@@ -23,7 +23,7 @@ class SecureHeadersHandlerTest extends PHPUnit_Framework_TestCase
             ->method('apply')
             ->with($this->isInstanceOf('SecureHeaders\PsrHttpAdapter\Psr7Adapter'));
 
-        $handler  = new PsrHttpAdapter\SecureHeadersHandler($headers);
+        $handler  = new PsrHttpAdapter\ApplySecureHeaders($headers);
 
         $next = function ($requestIn, $responseIn) use ($request, $response) {
             $this->assertSame($request, $requestIn);

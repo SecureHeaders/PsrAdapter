@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface as Response;
  *
  * Middleware to apply Secure headers to a PSR7 response
  */
-class SecureHeadersHandler
+class ApplySecureHeaders
 {
     /**
      * Headers
