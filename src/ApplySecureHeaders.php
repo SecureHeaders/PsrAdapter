@@ -42,7 +42,7 @@ class ApplySecureHeaders
      *
      * @param Request  $request  Incoming PSR7 request
      * @param Response $response PSR7 Response
-     * @param callable $next     Delagate middleware
+     * @param callable $next     Delagate middleware `(Request, Response): Response`
      *
      * @return Response
      *
