@@ -25,10 +25,9 @@ class SecureHeadersHandlerTest extends PHPUnit_Framework_TestCase
 
         $handler  = new PsrHttpAdapter\SecureHeadersHandler($headers);
 
-        $test = $this;
-        $next = function ($requestIn, $responseIn) use ($test, $request, $response) {
-            $test->assertSame($request, $requestIn);
-            $test->assertSame($response, $responseIn);
+        $next = function ($requestIn, $responseIn) use ($request, $response) {
+            $this->assertSame($request, $requestIn);
+            $this->assertSame($response, $responseIn);
             return $responseIn;
         };
 
