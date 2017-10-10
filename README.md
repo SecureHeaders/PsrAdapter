@@ -9,7 +9,7 @@ For more information on adapters, see [Framework Integration](https://github.com
 
 ## Usage
 
-Assuming you already have a PSR-7 response object (e.g. returned from a previous middleware) in the `$headers` variable:
+Assuming you already have a PSR-7 response object (e.g. returned from a previous middleware) in the `$response` variable:
 
 ```php
 // Configure SecureHeaders
