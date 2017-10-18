@@ -70,7 +70,9 @@ class Psr7Adapter implements HttpAdapter
     }
 
     /**
-     * Retrieve the new PSR-7 response object, with security headers applied
+     * Retrieve the stored PSR-7 response object. Use this for retrieving a
+     * response with security headers applied, after passing the current
+     * instance of this adapter through SecureHeaders
      *
      * @api
      *
