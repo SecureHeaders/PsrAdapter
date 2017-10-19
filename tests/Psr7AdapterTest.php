@@ -9,6 +9,15 @@ use Zend\Diactoros\Response;
 
 class Psr7AdapterTest extends PHPUnit_Framework_TestCase
 {
+
+    public function testThrowsException()
+    {
+        $this->setExpectedException('SecureHeaders\PsrHttpAdapter\Exception');
+        $response = new Response;
+        $adapter  = new Psr7Adapter($response);
+        $adapter->getSecuredResponse();
+    }
+
     public function testProperlyFillsHeaderBag()
     {
         $response = (new Response())
@@ -35,7 +44,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
         $adapter = new Psr7Adapter($response);
         $adapter->sendHeaders(new HeaderBag());
 
-        $finalResponse = $adapter->getFinalResponse();
+        $finalResponse = $adapter->getSecuredResponse();
 
         $this->assertEquals([], $finalResponse->getHeaders());
     }
@@ -54,7 +63,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
             'Cache-Control: no-worries :)'
         ]));
 
-        $finalResponse = $adapter->getFinalResponse();
+        $finalResponse = $adapter->getSecuredResponse();
 
         $this->assertEquals([
             'content-type' => ['text/xml'],

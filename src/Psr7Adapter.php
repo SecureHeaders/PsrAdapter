@@ -14,6 +14,15 @@ class Psr7Adapter implements HttpAdapter
     private $response;
 
     /**
+     * Has the response been secured?
+     *
+     * @var bool
+     *
+     * @access private
+     */
+    private $isSecured = false;
+
+    /**
      * @api
      */
     public function __construct(ResponseInterface $response)
@@ -46,6 +55,8 @@ class Psr7Adapter implements HttpAdapter
                 $header->getValue()
             );
         }
+
+        $this->isSecured = true;
     }
 
     /**
@@ -76,8 +87,11 @@ class Psr7Adapter implements HttpAdapter
      *
      * @return ResponseInterface
      */
-    public function getFinalResponse()
+    public function getSecuredResponse()
     {
+        if (! $this->isSecured) {
+            throw new Exception('Response has not been secured');
+        }
         return $this->response;
     }
 }
