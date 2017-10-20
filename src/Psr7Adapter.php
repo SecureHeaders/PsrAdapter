@@ -2,8 +2,9 @@
 
 namespace SecureHeaders\PsrHttpAdapter;
 
-use Aidantwoods\SecureHeaders\Http\HttpAdapter;
 use Aidantwoods\SecureHeaders\HeaderBag;
+use Aidantwoods\SecureHeaders\Http\HttpAdapter;
+use LogicException;
 use Psr\Http\Message\ResponseInterface;
 
 class Psr7Adapter implements HttpAdapter
@@ -86,11 +87,12 @@ class Psr7Adapter implements HttpAdapter
      * @api
      *
      * @return ResponseInterface
+     * @throws LogicException if response has not been secured
      */
     public function getSecuredResponse()
     {
         if (! $this->isSecured) {
-            throw new Exception('Response has not been secured');
+            throw new LogicException('Response has not been secured');
         }
         return $this->response;
     }

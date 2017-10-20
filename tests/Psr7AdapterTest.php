@@ -12,7 +12,7 @@ class Psr7AdapterTest extends PHPUnit_Framework_TestCase
 
     public function testThrowsException()
     {
-        $this->setExpectedException('SecureHeaders\PsrHttpAdapter\Exception');
+        $this->setExpectedException('LogicException');
         $response = new Response;
         $adapter  = new Psr7Adapter($response);
         $adapter->getSecuredResponse();
