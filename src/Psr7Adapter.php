@@ -92,7 +92,10 @@ class Psr7Adapter implements HttpAdapter
     public function getSecuredResponse()
     {
         if (! $this->isSecured) {
-            throw new LogicException('Response has not been secured');
+            throw new LogicException(
+                'Response not secured. Psr7Adapter::sendHeaders() was not called.'
+                . ' Psr7Adapter should be passed to SecureHeaders::apply()'
+            );
         }
         return $this->response;
     }
