@@ -23,5 +23,5 @@ $adapter = new SecureHeaders\PsrHttpAdapter\Psr7Adapter($response);
 $headers->apply($adapter);
 
 // And finally retrieve the updated HTTP response object
-$response = $adapter->getFinalResponse();
+$response = $adapter->getSecuredResponse();
 ```
