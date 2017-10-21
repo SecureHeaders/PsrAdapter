@@ -55,7 +55,7 @@ class ApplySecureHeaders
         $adapter  = $this->adapt($response);
 
         $headers->apply($adapter);
-        $response = $adapter->getFinalResponse();
+        $response = $adapter->getSecuredResponse();
 
         return $response;
     }
