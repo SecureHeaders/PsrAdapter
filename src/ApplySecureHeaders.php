@@ -3,15 +3,17 @@
 namespace SecureHeaders\PsrHttpAdapter;
 
 use Aidantwoods\SecureHeaders\SecureHeaders;
-use Psr\Http\Message\RequestInterface as Request;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Server\MiddlewareInterface as Middleware;
+use Psr\Http\Server\RequestHandlerInterface as Handler;
 
 /**
  * Secure headers handler
  *
  * Middleware to apply Secure headers to a PSR7 response
  */
-class ApplySecureHeaders
+class ApplySecureHeaders implements Middleware
 {
     /**
      * Headers
@@ -41,16 +43,16 @@ class ApplySecureHeaders
      * response object before returning it
      *
      * @param Request  $request  Incoming PSR7 request
-     * @param Response $response PSR7 Response
-     * @param callable $next     Delagate middleware `(Request, Response): Response`
+     * @param Handler  $handler  Server Request Handler
      *
      * @return Response
      *
      * @access public
      */
-    public function __invoke(Request $request, Response $response, callable $next)
+
+    public function process(Request $request, Handler $handler): Response
     {
-        $response = $next($request, $response);
+        $response = $handler->handle($request);
         $headers  = $this->headers;
         $adapter  = $this->adapt($response);
 
