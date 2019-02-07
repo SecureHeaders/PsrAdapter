@@ -4,15 +4,15 @@ namespace SecureHeaders\PsrHttpAdapter\Tests;
 
 use Aidantwoods\SecureHeaders\HeaderBag;
 use SecureHeaders\PsrHttpAdapter\Psr7Adapter;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Zend\Diactoros\Response;
 
-class Psr7AdapterTest extends PHPUnit_Framework_TestCase
+class Psr7AdapterTest extends TestCase
 {
 
     public function testThrowsException()
     {
-        $this->setExpectedException('LogicException');
+        $this->expectException('LogicException');
         $response = new Response;
         $adapter  = new Psr7Adapter($response);
         $adapter->getSecuredResponse();
