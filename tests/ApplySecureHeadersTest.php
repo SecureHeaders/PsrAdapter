@@ -23,7 +23,7 @@ class ApplySecureHeadersTest extends TestCase
         $next = new class implements Handler {
             public function handle(Request $request) : ResponseInterface
             {
-                return new Response();
+                return new \Zend\Diactoros\Response();
             }
         };
 
