@@ -17,6 +17,7 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+matrix:
   allow_failures:
     - php: nightly
 
